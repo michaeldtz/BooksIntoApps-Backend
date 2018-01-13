@@ -1,0 +1,27 @@
+.ui-dropzone{
+	background-color: gray;
+	border: 2px dashed rgb(200,200,200);
+	
+	text-align: center;
+	line-height: 50px;
+	color: rgb(200,200,200);
+	
+	width: 70%;
+	height:100%;
+}
+
+.ui-dropzone.fullscreen{
+	display:none;
+}
+
+.ui-dropzone.dropping{
+	background-color: steelblue;	
+}
+
+.ui-dropzone-loadingIndicator{
+	background-color: green;
+	padding-left: 10px;
+	text-align: center;
+	box-sizing: border-box;
+	font-size: 20px;
+}

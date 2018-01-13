@@ -1,0 +1,37 @@
+<div  class="content" id="itemmaintenance" ng-controller="formController">
+	<input class="titleInp" id="titleInp" ng-model="contentitem.title" style="width: 100%" placeholder="Title"  >
+		<br/>
+		<label class="inpLbl">Sortnum</label>  <input class="smallInp" ng-model="contentitem.sortorder">
+		<br/>
+		<!-- <label class="inpLbl">Category</label>  <input class="smallInp" ng-model="contentitem.category"> 
+		<br/> -->
+		<label class="inpLbl">Icon</label>  <input class="smallInp" ng-model="contentitem.icon">
+		<i class="icon iconpreview ion-{{contentitem.icon}}"></i>
+		
+		<span class="smallText"><i class="icon ion-information-circled"></i>Take icon names from <a href="http://ionicons.com/" target="_blank">ionicons</a> without 'ion-'</span>
+		
+		<br/>
+		<label class="inpLbl">Type</label> 
+		
+		<select class="form-control">
+		  <option>1</option>
+		  <option>2</option>
+		  <option>3</option>
+		  <option>4</option>
+		  <option>5</option>
+		</select>
+		
+		<!-- <br/>
+		 <label class="inpLbl">Tags</label>  <input class="smallInp" style="width: 500px" ng-model="contentitem.tags">  -->
+		
+		
+		<text-angular name="htmlcontent" class="noMargin" ng-model="contentitem.content"></text-angular>
+		
+		<button class="largeUpdateBtn" ng-click="updateItem()">
+		<i class="icon ion-share"></i>
+		Update</button>
+		
+		<button class="largeDeleteBtn" ng-click="deleteItem()">
+		<i class="icon ion-trash-b"></i>
+		Delete Item</button>
+	</div>

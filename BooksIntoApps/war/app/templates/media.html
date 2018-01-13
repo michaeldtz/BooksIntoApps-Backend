@@ -1,0 +1,24 @@
+<div ng-controller="mediaController">
+
+<br/>
+<button ng-click="loadMediaList()" class="btn icon ion-refresh" style="width: 49%"></button>
+
+	<ul id="medialist" class="list-group">
+		<li class="list-group-item thumbnail" ng-repeat="mediaitem in medialist">
+		<!-- data-toggle="tooltip" data-placement="left" title="{{ mediaitem.filename }}" -->
+		
+		{{ mediaitem.filename }}
+			
+			<img src="/services/content/media/{{ mediaitem.filename }}" class="img-rounded"
+				style="max-width:130px; max-height: 100px; margin-top: 7px;"/>
+				
+				<!--  <button class="btn btn-link bottomLeft"><i class="icon 20pxicon ion-ios7-copy" data-toggle="tooltip" data-placement="left" title="Copy Name to Clipboard"></i></button>-->
+				<button class="btn btn-link bottomRight" ng-click="deleteMediaItem(mediaitem)"><i class="icon 20pxicon ion-trash-b"></i></button>
+				
+				</li>
+			
+	</ul>
+	
+	
+			
+</div>

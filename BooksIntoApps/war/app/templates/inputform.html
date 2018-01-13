@@ -1,0 +1,103 @@
+<div class="content"
+	style="margin-bottom: 40px; width: 70%; position: relative;"
+	ng-controller="formController">
+
+	<h2>Content Details</h2>
+
+	<div>
+		<div id="buttonArea">
+
+			<button type="button" ng-click="updateItem()" class="btn btn-success"
+				style="width: 300px">
+				<i class="icon ion-share"></i>Update
+			</button>
+			<br /> <br />
+			<button type="button" ng-click="reset()" ng-disabled="isUnchanged()"
+				class="btn btn-warning" style="width: 300px">
+				<i class="icon ion-share"></i>Reset
+			</button>
+			<br /> <br />
+			<button type="button" ng-click="deleteItem()" class="btn btn-danger"
+				style="width: 300px">
+				<i class="icon ion-share"></i>Delete
+			</button>
+
+		</div>
+
+		<form role="form">
+			<div class="form-group smallWidth">
+				<label for="titleInp">Title</label> <input type="text"
+					class="form-control" id="titleInp" placeholder="Title"
+					ng-model="contentitem.title">
+			</div>
+			<div class="form-group smallWidth">
+				<label for="typeDropdown">Type</label> <select id="typeDropdown"
+					class="form-control" ng-model="contentitem.type">
+					<option value="">--select type--</option>
+					<option value="headline">Chapter</option>					
+					<option value="chapter">Sunchapter</option>
+					<option value="content">Content</option>
+					<option value="quiz">Quiz</option>
+				</select>
+			</div>
+			<!-- <div class="form-group smallWidth">
+				<label for="typeDropdown">Status</label> <select id="statusDropdown"
+					class="form-control" ng-model="contentitem.status">
+					<option value="">In Preparation</option>					
+					<option value="active">Active</option>
+					<option value="outdated">Outdated</option>					
+				</select>
+			</div>
+			 -->
+			 
+			<div class="form-group smallWidth">
+				<label for="iconInp">Icon</label>
+				<div class="input-group">
+					<input type="text" class="form-control" id="iconInp"
+						ng-model="contentitem.icon" ng-change="checkIconInput()">
+					<div class="input-group-addon">
+						<i class="icon ion-{{contentitem.icon}}"></i>
+					</div>
+					<div class="input-group-addon">
+						<a href="http://ionicons.com/" target="_blank"><i
+							class="icon ion-information-circled" tooltip="take items from"></i></a>
+					</div>
+				</div>
+
+
+			</div>
+			<div class="form-group smallWidth">
+				<label for="sortnumInp">Sortnum</label>
+				<div class="input-group">
+
+					<input type="text" class="form-control" id="sortnumInp"
+						placeholder="Sortnum" ng-model="contentitem.sortorder">
+					<div class="input-group-addon icon ion-arrow-up-b"
+						ng-click="sortnumUp()"></div>
+					<div class="input-group-addon icon ion-arrow-down-b"
+						ng-click="sortnumDown()"></div>
+				</div>
+			</div>
+
+			<div
+				ng-show="contentitem.type == 'content' || contentitem.type == 'chapter' || contentitem.type == 'headline'">
+				
+<!-- 
+clear
+
+insertImage
+insertLink
+insertVideo
+ -->
+				<text-angular ta-toolbar="[['h1','h2','h3'],['bold','italics'],['pre','p','quote','underline'],['ul','ol','indent','outdent'],['justifyLeft','justifyCenter','justifyRight'],['insertLink','localimage'],['html']]" name="htmlcontent" class="noMargin"
+					ng-model="contentitem.content"></text-angular>
+			</div>
+
+			<div ng-show="contentitem.type == 'quiz'">
+				<div ng-include="'templates/quiz.html'"></div>
+			</div>
+		</form>
+	</div>
+</div>
+
+

@@ -1,0 +1,27 @@
+
+
+<ion-list ng-controller="contentListController">
+
+    <ion-item class="item listitem-{{item.type}}" ng-repeat="item in content" ng-click="itemSelected(item, $event)">
+        <i class="icon ion-{{item.icon}}"></i>
+        {{ item.title }}
+    </ion-item>
+    <!--
+    <ion-item class="item-divider">Kapitel 1</ion-item>
+    <ion-item class="">
+        <i class="icon ion-lightbulb"></i>
+        Einführung
+    </ion-item>
+    <ion-item class="">
+        <i class="icon ion-help-buoy"></i>
+        Die wichtigsten Tipps
+    </ion-item>
+    <ion-item class="">
+        <i class="icon ion-compose"></i>
+        Test
+    </ion-item>
+    <ion-item class="item-divider">Kapitel 2</ion-item>
+    <ion-item class="">Test</ion-item>
+    <ion-item class="">Test</ion-item>
+    -->
+</ion-list>
